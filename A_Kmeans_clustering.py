@@ -18,3 +18,5 @@ plt.plot(range(1,11),wcss)
 plt.title("The ELbow Method")
 plt.xlabel("Nuber of clusters")
 plt.ylabel("WCSS")
+
+#Visualization of Clusters
