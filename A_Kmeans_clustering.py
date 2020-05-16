@@ -11,12 +11,16 @@ X = dataset.iloc[:,[3,4]].values
 from sklearn.cluster import KMeans
 wcss = []
 for i in range(1,11):
-    kmeans = KMeans(n_clusters = i,init = "k-means++",max_iter = 300,n_init = 10,random_state = 0)
+    kmeans = KMeans(n_clusters = i,init = "k-means++",max_iter = 300,n_init = 10,random_state = 42)
     kmeans.fit(X)
     wcss.append(kmeans.inertia_)
 plt.plot(range(1,11),wcss)
 plt.title("The ELbow Method")
 plt.xlabel("Nuber of clusters")
 plt.ylabel("WCSS")
+plt.show()
 
-#Visualization of Clusters
+#K - means
+kmeans = KMeans(n_clusters = 5,init = "k-means++",max_iter = 300,n_init = 10,random_state = 42)
+y=kmeans.fit_predict(X)
+
